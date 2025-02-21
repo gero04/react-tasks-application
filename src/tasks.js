@@ -1,4 +1,4 @@
-export const arregloDeTareas = [
+export let arregloDeTareas = [
   {
     id: 0,
     title: "Tarea 1",
