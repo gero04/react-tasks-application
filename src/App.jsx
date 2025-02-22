@@ -1,6 +1,6 @@
-import TaskList from "./TaskList.jsx"; // Import the TaskList component
-import TaskForm from "./TaskForm.jsx";
-import { arregloDeTareas} from "./tasks";
+import TaskList from "./components/TaskList.jsx"; // Import the TaskList component
+import TaskForm from "./components/TaskForm.jsx";
+import { arregloDeTareas} from "./data/tasks.js";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
     setTasks([
       ...tasks,
       {
-        id: arregloDeTareas.length,
+        id: tasks.length,
         title: nombre,
         description: descripcion,
       },

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import React from "react";
 
@@ -8,25 +8,40 @@ function TaskForm({ createTask, tasks }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     createTask(nombre, descripcion);
+
+    //Limpiamos los valores de los inputs al guardar la tarea
+    setNombre("");
+    setDescripcion("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
+        // id para identificar este input en especifico
         id="nombreTareaInput"
+        // texto en gris que tiene el input vacio
         placeholder="Ingrese el nombre de la tarea"
+        // que pasa cuando cambia el input? seteamos el nombre con event.target.value
         onChange={(event) => {
           setNombre(event.target.value);
         }}
+        // Establecemos que el valor sea el nombre (cuando pongamos guardar se queda en blanco)
+        value={nombre}
+        //EL cursor aparece por defecto en este input cuando refrescamos la pagina
+        autoFocus
       />
       <br />
       <br />
-      <input
+      <textarea
+        // id para identificar este textarea en especifico
         id="descripTareaInput"
+        // texto en gris que tiene el input vacio
         placeholder="Ingrese la descripcion de la tarea"
+        // que pasa cuando cambia el input? seteamos la descripcion con event.target.value
         onChange={(event) => {
           setDescripcion(event.target.value);
         }}
+        value={descripcion}
       />
       <br />
       <br />

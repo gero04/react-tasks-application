@@ -1,3 +1,5 @@
+import TaskCard from "./TaskCard";
+
 function TaskList(props) {
   if (props.tasks.length === 0) {
     return <h1>No hay tareas aun</h1>;
@@ -6,12 +8,7 @@ function TaskList(props) {
   return (
     <div>
       {props.tasks.map((task) => (
-        <div key={task.id}>
-          <h1>
-            #{task.id + 1}. {task.title}
-          </h1>
-          <p>{task.description}</p>
-        </div>
+        <TaskCard key={task.id} task={task} />
       ))}
     </div>
   );
