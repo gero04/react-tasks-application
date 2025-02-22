@@ -1,8 +1,6 @@
 import React from "react";
-import EliminarTarea from "./EliminarTarea";
 
-export function TaskCard({ task }) {
-  
+export function TaskCard({ task, eliminarTarea }) {
   return (
     <div>
       <p>
@@ -10,7 +8,7 @@ export function TaskCard({ task }) {
       </p>
       <p>{task.description}</p>
 
-      <EliminarTarea props={task}/>
+      <button onClick={() => eliminarTarea(task.id)}>Eliminar tarea...</button>
     </div>
   );
 }
