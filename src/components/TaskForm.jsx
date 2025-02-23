@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TaskContext } from "../context/TaskContext";
 
 import React from "react";
 
-function TaskForm({ createTask, tasks }) {
+function TaskForm() {
+
+  //de TaskContext me traigo SOLAMENTE el crearTarea
+  const { crearTarea } = useContext(TaskContext);
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    createTask(nombre, descripcion);
+    crearTarea(nombre, descripcion);
 
     //Limpiamos los valores de los inputs al guardar la tarea
     setNombre("");
