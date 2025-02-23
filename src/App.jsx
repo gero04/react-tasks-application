@@ -5,10 +5,12 @@ function App() {
   
 
   return (
-    <div>
+    <main className="bg-zinc-700 h-screen">
+      <div className="container mx-auto bg-yellow p-10">
       <TaskForm />
       <TaskList />
-    </div>
+      </div>
+    </main>
   ); // Render the TaskList component
 }
 export default App;

@@ -13,7 +13,7 @@ export function TaskCard({ task }) {
         {task.description}
       </p>
 
-      <button className="bg-red-500 px-1 mt-4 mx-auto hover:bg-red-300 rounded-md" onClick={() => eliminarTarea(task.id)}>Eliminar tarea...</button>
+      <button className="bg-red-500 px-1 mt-4 mx-auto hover:bg-red-300 rounded-md block" onClick={() => eliminarTarea(task.id)}>Eliminar tarea...</button>
     </div>
   );
 }
